@@ -5,9 +5,8 @@ package ${groupId};
 
 import java.util.concurrent.TimeUnit;
 
-import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.Capabilities;
 
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
@@ -26,14 +25,11 @@ public class TestNgTestBase {
   protected String baseUrl;
 
   @BeforeClass
-  public void init() {
+  public void init() throws IOException {
     baseUrl = PropertyLoader.loadProperty("site.url");
     gridHubUrl = PropertyLoader.loadProperty("grid2.hub");
 
-    DesiredCapabilities capabilities = new DesiredCapabilities();
-    capabilities.setBrowserName(PropertyLoader.loadProperty("browser.name"));
-    capabilities.setVersion(PropertyLoader.loadProperty("browser.version"));
-    capabilities.setPlatform(Platform.valueOf(PropertyLoader.loadProperty("browser.platform")));
+    Capabilities capabilities = PropertyLoader.loadCapabilities();
 
     driver = WebDriverFactory.getDriver(gridHubUrl, capabilities);
 

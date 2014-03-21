@@ -15,13 +15,13 @@ public class SampleTestNgTest extends TestNgTestBase {
   private HomePage homepage;
 
   @BeforeClass
-  public void testInit(String path) {
+  public void testInit() {
     driver.get(baseUrl);
     homepage = PageFactory.initElements(driver, HomePage.class);
   }
 
   @Test
-  public void testH1Existing() {
+  public void testHomePageHasAHeader() {
     Assert.assertFalse("".equals(homepage.header.getText()));
   }
 }
