@@ -23,8 +23,8 @@
   </licenses>
 
   <scm>
-    <connection>scm:git:https://github.com/barancev/webdriver-java-archetype</connection>
-    <developerConnection>scm:git:https://github.com/barancev/webdriver-java-archetype</developerConnection>
+    <connection>scm:git:git@github.com:barancev/webdriver-java-archetype.git</connection>
+    <developerConnection>scm:git:git@github.com:barancev/webdriver-java-archetype.git</developerConnection>
     <url>https://github.com/barancev/webdriver-java-archetype</url>
   </scm>
 
