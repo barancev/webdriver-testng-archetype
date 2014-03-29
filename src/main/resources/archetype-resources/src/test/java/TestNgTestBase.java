@@ -3,15 +3,17 @@
 #set( $symbol_escape = '\' )
 package ${groupId};
 
-import java.util.concurrent.TimeUnit;
+import java.io.IOException;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.remote.Capabilities;
+import org.openqa.selenium.Capabilities;
 
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeSuite;
 
 import ru.stqa.selenium.factory.WebDriverFactory;
+import ru.stqa.selenium.factory.WebDriverFactoryMode;
 
 import ${groupId}.util.PropertyLoader;
 
@@ -24,6 +26,11 @@ public class TestNgTestBase {
   protected String gridHubUrl;
   protected String baseUrl;
 
+  @BeforeSuite
+  public void initWebDriverFactory() {
+    WebDriverFactory.setMode(WebDriverFactoryMode.THREADLOCAL_SINGLETON);
+  }
+
   @BeforeClass
   public void init() throws IOException {
     baseUrl = PropertyLoader.loadProperty("site.url");
@@ -32,14 +39,10 @@ public class TestNgTestBase {
     Capabilities capabilities = PropertyLoader.loadCapabilities();
 
     driver = WebDriverFactory.getDriver(gridHubUrl, capabilities);
-
-    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
   }
 
   @AfterSuite(alwaysRun = true)
   public void tearDown() {
-    if (driver != null) {
-      WebDriverFactory.dismissDriver(driver);
-    }
+    WebDriverFactory.dismissAll();
   }
 }
