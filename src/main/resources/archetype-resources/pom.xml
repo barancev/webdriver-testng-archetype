@@ -8,44 +8,19 @@
 
   <dependencies>
     <dependency>
-      <groupId>org.testng</groupId>
-      <artifactId>testng</artifactId>
-      <version>6.8.8</version>
-    </dependency>
-    <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.11</version>
     </dependency>
     <dependency>
-      <groupId>org.seleniumhq.selenium</groupId>
-      <artifactId>selenium-java</artifactId>
-      <version>2.40.0</version>
-    </dependency>
-    <dependency>
-      <groupId>com.opera</groupId>
-      <artifactId>operadriver</artifactId>
-      <version>1.5</version>
-    </dependency>
-    <dependency>
-      <groupId>com.github.detro.ghostdriver</groupId>
-      <artifactId>phantomjsdriver</artifactId>
-      <version>1.1.0</version>
-      <exclusions>
-        <exclusion>
-          <groupId>org.seleniumhq.selenium</groupId>
-          <artifactId>selenium-remote-driver</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>org.seleniumhq.selenium</groupId>
-          <artifactId>selenium-server</artifactId>
-        </exclusion>
-      </exclusions>
+      <groupId>org.testng</groupId>
+      <artifactId>testng</artifactId>
+      <version>6.8.8</version>
     </dependency>
     <dependency>
       <groupId>ru.stqa.selenium</groupId>
       <artifactId>webdriver-factory</artifactId>
-      <version>1.0</version>
+      <version>1.1.41</version>
     </dependency>
   </dependencies>
   <build>
