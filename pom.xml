@@ -7,7 +7,7 @@
   <packaging>maven-archetype</packaging>
 
   <name>WebDriver Java Archetype</name>
-  <description>Archetype for a Maven project intended to develop tests with Selenium WebDriver and JUnit/TestNG</description>
+  <description>Archetype for a Maven project intended to develop tests with Selenium WebDriver and TestNG</description>
     <url>https://github.com/barancev/webdriver-java-archetype</url>
 
   <properties>
