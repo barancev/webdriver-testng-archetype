@@ -22,22 +22,22 @@ import ${groupId}.util.PropertyLoader;
  */
 public class TestNgTestBase {
 
+  protected static String gridHubUrl;
+  protected static String baseUrl;
+  protected static Capabilities capabilities;
+
   protected WebDriver driver;
-  protected String gridHubUrl;
-  protected String baseUrl;
 
   @BeforeSuite
-  public void initWebDriverFactory() {
+  public void initWebDriverFactory() throws IOException {
+    baseUrl = PropertyLoader.loadProperty("site.url");
+    gridHubUrl = PropertyLoader.loadProperty("grid2.hub");
+    capabilities = PropertyLoader.loadCapabilities();
     WebDriverFactory.setMode(WebDriverFactoryMode.THREADLOCAL_SINGLETON);
   }
 
   @BeforeClass
-  public void init() throws IOException {
-    baseUrl = PropertyLoader.loadProperty("site.url");
-    gridHubUrl = PropertyLoader.loadProperty("grid2.hub");
-
-    Capabilities capabilities = PropertyLoader.loadCapabilities();
-
+  public void initWebDriver() {
     driver = WebDriverFactory.getDriver(gridHubUrl, capabilities);
   }
 
