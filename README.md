@@ -1,4 +1,4 @@
-webdriver-java-archetype
-========================
+Webdriver TestNG Archetype
+==========================
 
-Archetype for a Maven project intended to develop tests with Selenium WebDriver and TestNG
+This archetype generates a new Maven project that can be used as a start point to develop tests in Java with Webdriver and TestNG.

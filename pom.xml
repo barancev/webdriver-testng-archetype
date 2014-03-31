@@ -2,13 +2,13 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>ru.stqa.selenium</groupId>
-  <artifactId>webdriver-java-archetype</artifactId>
+  <artifactId>webdriver-testng-archetype</artifactId>
   <version>1.1-SNAPSHOT</version>
   <packaging>maven-archetype</packaging>
 
-  <name>WebDriver Java Archetype</name>
+  <name>WebDriver TestNG Archetype</name>
   <description>Archetype for a Maven project intended to develop tests with Selenium WebDriver and TestNG</description>
-    <url>https://github.com/barancev/webdriver-java-archetype</url>
+    <url>https://github.com/barancev/webdriver-testng-archetype</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -22,9 +22,9 @@
   </licenses>
 
   <scm>
-    <connection>scm:git:git@github.com:barancev/webdriver-java-archetype.git</connection>
-    <developerConnection>scm:git:git@github.com:barancev/webdriver-java-archetype.git</developerConnection>
-    <url>https://github.com/barancev/webdriver-java-archetype</url>
+    <connection>scm:git:git@github.com:barancev/webdriver-testng-archetype.git</connection>
+    <developerConnection>scm:git:git@github.com:barancev/webdriver-testng-archetype.git</developerConnection>
+    <url>https://github.com/barancev/webdriver-testng-archetype</url>
   </scm>
 
   <developers>
