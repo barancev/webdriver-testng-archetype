@@ -1,7 +1,7 @@
 #set( $symbol_pound = '#' )
 #set( $symbol_dollar = '$' )
 #set( $symbol_escape = '\' )
-package ${groupId}.util;
+package ${package}.util;
 
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.Platform;

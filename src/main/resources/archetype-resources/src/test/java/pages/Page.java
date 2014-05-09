@@ -1,7 +1,7 @@
 #set( $symbol_pound = '#' )
 #set( $symbol_dollar = '$' )
 #set( $symbol_escape = '\' )
-package ${groupId}.pages;
+package ${package}.pages;
 
 import org.openqa.selenium.WebDriver;
 

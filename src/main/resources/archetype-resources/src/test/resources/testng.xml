@@ -6,7 +6,7 @@
 <suite name="Tests" verbose="5">
   <test name="Test1">
     <classes>
-      <class name="${groupId}.SampleTestNgTest"/>
+      <class name="${package}.SampleTestNgTest"/>
     </classes>
   </test>  
 </suite>

@@ -1,7 +1,7 @@
 #set( $symbol_pound = '#' )
 #set( $symbol_dollar = '$' )
 #set( $symbol_escape = '\' )
-package ${groupId};
+package ${package};
 
 import java.io.IOException;
 
@@ -15,7 +15,7 @@ import org.testng.annotations.BeforeSuite;
 import ru.stqa.selenium.factory.WebDriverFactory;
 import ru.stqa.selenium.factory.WebDriverFactoryMode;
 
-import ${groupId}.util.PropertyLoader;
+import ${package}.util.PropertyLoader;
 
 /**
  * Base class for all the TestNG-based test classes
