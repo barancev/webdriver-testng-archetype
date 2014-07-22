@@ -73,9 +73,7 @@
     <profile>
       <id>firefox</id>
       <properties>
-        <browser.name>firefox</browser.name>
-        <browser.version></browser.version>
-        <browser.platform></browser.platform>
+        <capabilities>/firefox.capabilities</capabilities>
       </properties>
       <activation>
         <activeByDefault>true</activeByDefault>
@@ -84,56 +82,43 @@
     <profile>
       <id>chrome</id>
       <properties>
-        <browser.name>chrome</browser.name>
-        <browser.version></browser.version>
-        <browser.platform></browser.platform>
+        <capabilities>/chrome.capabilities</capabilities>
       </properties>
     </profile>
     <profile>
       <id>ie</id>
       <properties>
-        <browser.name>internet explorer</browser.name>
-        <browser.version></browser.version>
-        <browser.platform></browser.platform>
+        <capabilities>/ie.capabilities</capabilities>
       </properties>
     </profile>
     <profile>
       <id>safari</id>
       <properties>
-        <browser.name>safari</browser.name>
-        <browser.version></browser.version>
-        <browser.platform></browser.platform>
+        <capabilities>/safari.capabilities</capabilities>
       </properties>
     </profile>
     <profile>
       <id>phantomjs</id>
       <properties>
-        <browser.name>phantomjs</browser.name>
-        <browser.version></browser.version>
-        <browser.platform></browser.platform>
+        <capabilities>/phantomjs.capabilities</capabilities>
       </properties>
     </profile>
     <profile>
       <id>opera</id>
       <properties>
-        <browser.name>opera</browser.name>
-        <browser.version></browser.version>
-        <browser.platform></browser.platform>
+        <capabilities>/opera.capabilities</capabilities>
       </properties>
     </profile>
     <profile>
       <id>htmlunit</id>
       <properties>
-        <browser.name>htmlunit</browser.name>
-        <browser.version></browser.version>
-        <browser.platform></browser.platform>
+        <capabilities>/htmlunit.capabilities</capabilities>
       </properties>
     </profile>
     <!-- environments -->
     <profile>
-      <id>local</id>
+      <id>localhost</id>
       <properties>
-        <env>local</env>
         <site.url>http://localhost/</site.url>
       </properties>
       <activation>
@@ -141,31 +126,36 @@
       </activation>
     </profile>
     <profile>
-      <id>dev</id>
+      <id>devhost</id>
       <properties>
-        <env>dev</env>
         <site.url>http://devhost/</site.url>
       </properties>
     </profile>
     <profile>
-      <id>test</id>
+      <id>testhost</id>
       <properties>
-        <env>test</env>
         <site.url>http://testhost/</site.url>
       </properties>
     </profile>
     <profile>
-      <id>prod</id>
+      <id>prodhost</id>
       <properties>
-        <env>prod</env>
         <site.url>http://prodhost.com/</site.url>
       </properties>
     </profile>
     <!-- grid -->
     <profile>
+      <id>nogrid</id>
+      <properties>
+        <grid.url></grid.url>
+      </properties>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+    </profile>
+    <profile>
       <id>grid</id>
       <properties>
-        <env>local</env>
         <grid.url>http://localhost:4444/wd/hub/</grid.url>
       </properties>
     </profile>
