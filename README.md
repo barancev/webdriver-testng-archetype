@@ -14,11 +14,11 @@ where `mygroupId` is a group id of the project you are creating, and `myartifact
 Project Structure
 -----------------------------------
 
-The project follows the standard Maven structure, so all the tests go in the `src/test/java` folder. Tests should inherit from the `TestNgTestBase` class that performs setup and teardown tasks. This class uses [WebDriverFactory](https://github.com/barancev/webdriver-factory) to manage drivers.
+The project follows the standard Maven structure, so all the tests go in the `src/test/java` folder. Tests should inherit from the `TestNgTestBase` class that performs common setup and teardown tasks. This class uses [WebDriverFactory](https://github.com/barancev/webdriver-factory) to manage drivers.
 
 
 `SampleTestNgTest` class (in `src/test/java`) is an example of a test class for testing the homepage of a web application. In the setup method of this class, the `PageFactory` class is used
- to help supporting the **PageObject** pattern. For more info around this pattern, read this wiki page: https://github.com/SeleniumHQ/selenium/wiki/PageObjects
+ to help supporting the [PageObjects](https://github.com/SeleniumHQ/selenium/wiki/PageObjects) pattern.
 
 Project Configuration
 -----------------------------------

@@ -36,6 +36,7 @@ public class TestNgTestBase {
       gridHubUrl = null;
     }
     capabilities = PropertyLoader.loadCapabilities();
+    WebDriverFactory.setMode(WebDriverFactoryMode.THREADLOCAL_SINGLETON);
   }
 
   @BeforeMethod
