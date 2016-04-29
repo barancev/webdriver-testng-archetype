@@ -28,7 +28,7 @@ The project uses Maven profiles to set configuration parameters. There are three
 For example, to run tests in Chrome on the localhost without grid use this profile set:
 
 ```
-mvn test -P chrome,localhost,nogrid
+mvn -P chrome,localhost,nogrid test
 ```
 
 Default profile set is `firefox,localhost,nogrid`
