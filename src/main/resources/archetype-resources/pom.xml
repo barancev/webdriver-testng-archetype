@@ -15,7 +15,7 @@
     <dependency>
       <groupId>ru.stqa.selenium</groupId>
       <artifactId>webdriver-factory</artifactId>
-      <version>2.1</version>
+      <version>3.0</version>
     </dependency>
     <dependency>
       <groupId>org.seleniumhq.selenium</groupId>
