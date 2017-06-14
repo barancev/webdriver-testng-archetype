@@ -4,6 +4,7 @@
 package ${package};
 
 import java.io.IOException;
+import java.net.URL;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.Capabilities;
@@ -14,14 +15,12 @@ import org.testng.annotations.BeforeSuite;
 
 import ru.stqa.selenium.factory.WebDriverPool;
 
-import ${package}.util.PropertyLoader;
-
 /**
  * Base class for TestNG-based test classes
  */
 public class TestNgTestBase {
 
-  protected static String gridHubUrl;
+  protected static URL gridHubUrl = null;
   protected static String baseUrl;
   protected static Capabilities capabilities;
 
@@ -29,12 +28,12 @@ public class TestNgTestBase {
 
   @BeforeSuite
   public void initTestSuite() throws IOException {
-    baseUrl = PropertyLoader.loadProperty("site.url");
-    gridHubUrl = PropertyLoader.loadProperty("grid.url");
-    if ("".equals(gridHubUrl)) {
-      gridHubUrl = null;
+  	SuiteConfiguration config = new SuiteConfiguration();
+    baseUrl = config.getProperty("site.url");
+    if (config.hasProperty("grid.url") && !"".equals(config.getProperty("grid.url"))) {
+      gridHubUrl = new URL(config.getProperty("grid.url"));
     }
-    capabilities = PropertyLoader.loadCapabilities();
+    capabilities = config.getCapabilities();
   }
 
   @BeforeMethod

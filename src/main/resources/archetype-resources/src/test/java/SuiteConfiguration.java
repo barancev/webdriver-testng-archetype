@@ -1,7 +1,7 @@
 #set( $symbol_pound = '#' )
 #set( $symbol_dollar = '$' )
 #set( $symbol_escape = '\' )
-package ${package}.util;
+package ${package};
 
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.Platform;
@@ -12,23 +12,28 @@ import java.io.IOException;
 import java.util.Properties;
 
 /**
- * Class that extracts properties from the prop file.
+ * Loads test suite configuration from resource files.
  */
-public class PropertyLoader {
+public class SuiteConfiguration {
 
   private static final String DEBUG_PROPERTIES = "/debug.properties";
 
-  public static Capabilities loadCapabilities() throws IOException {
-    return loadCapabilities(System.getProperty("application.properties", DEBUG_PROPERTIES));
+  private Properties properties;
+
+  public SuiteConfiguration() throws IOException {
+  	this(System.getProperty("application.properties", DEBUG_PROPERTIES));
   }
 
-  public static Capabilities loadCapabilities(String fromResource) throws IOException {
-    Properties props = new Properties();
-    props.load(PropertyLoader.class.getResourceAsStream(fromResource));
-    String capabilitiesFile = props.getProperty("capabilities");
+  public SuiteConfiguration(String fromResource) throws IOException {
+    properties = new Properties();
+    properties.load(SuiteConfiguration.class.getResourceAsStream(fromResource));
+  }
+
+  public Capabilities getCapabilities() throws IOException {
+    String capabilitiesFile = properties.getProperty("capabilities");
 
     Properties capsProps = new Properties();
-    capsProps.load(PropertyLoader.class.getResourceAsStream(capabilitiesFile));
+    capsProps.load(SuiteConfiguration.class.getResourceAsStream(capabilitiesFile));
 
     DesiredCapabilities capabilities = new DesiredCapabilities();
     for (String name : capsProps.stringPropertyNames()) {
@@ -45,15 +50,11 @@ public class PropertyLoader {
     return capabilities;
   }
 
-  public static String loadProperty(String name) throws IOException {
-    return loadProperty(name, System.getProperty("application.properties", DEBUG_PROPERTIES));
+  public boolean hasProperty(String name) {
+    return properties.contains(name);
   }
 
-  public static String loadProperty(String name, String fromResource) throws IOException {
-    Properties props = new Properties();
-    props.load(PropertyLoader.class.getResourceAsStream(fromResource));
-
-    return props.getProperty(name);
+  public String getProperty(String name) {
+    return properties.getProperty(name);
   }
-
 }
