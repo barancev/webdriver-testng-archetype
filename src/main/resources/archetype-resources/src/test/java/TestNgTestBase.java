@@ -28,7 +28,7 @@ public class TestNgTestBase {
 
   @BeforeSuite
   public void initTestSuite() throws IOException {
-  	SuiteConfiguration config = new SuiteConfiguration();
+    SuiteConfiguration config = new SuiteConfiguration();
     baseUrl = config.getProperty("site.url");
     if (config.hasProperty("grid.url") && !"".equals(config.getProperty("grid.url"))) {
       gridHubUrl = new URL(config.getProperty("grid.url"));
