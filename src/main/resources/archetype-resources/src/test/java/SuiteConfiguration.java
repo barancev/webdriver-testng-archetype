@@ -51,7 +51,7 @@ public class SuiteConfiguration {
   }
 
   public boolean hasProperty(String name) {
-    return properties.contains(name);
+    return properties.containsKey(name);
   }
 
   public String getProperty(String name) {
