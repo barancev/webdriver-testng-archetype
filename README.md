@@ -6,7 +6,7 @@ This archetype generates a new Maven project that can be used as a start point t
 To create a project from this archetype:
 
 ```
-mvn archetype:generate -DarchetypeGroupId=ru.stqa.selenium -DarchetypeArtifactId=webdriver-testng-archetype -DarchetypeVersion=4.3 -DgroupId=<mygroupId> -DartifactId=<myartifactId>
+mvn archetype:generate -DarchetypeGroupId=ru.stqa.selenium -DarchetypeArtifactId=webdriver-testng-archetype -DarchetypeVersion=4.4 -DgroupId=<mygroupId> -DartifactId=<myartifactId>
 ```
 
 where `mygroupId` is a group id of the project you are creating, and `myartifactId` is an artifact id of the project you are creating.
