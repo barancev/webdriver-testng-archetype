@@ -1,4 +1,9 @@
 <archetype-descriptor name="webdriver-testng-archetype">
+  <requiredProperties>
+    <requiredProperty key="javaVersion">
+      <defaultValue>11</defaultValue>
+    </requiredProperty>
+  </requiredProperties>
   <fileSets>
     <fileSet filtered="true" encoding="UTF-8">
       <directory></directory>
