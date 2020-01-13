@@ -27,11 +27,6 @@
       <artifactId>selenium-java</artifactId>
       <version>3.141.59</version>
     </dependency>
-    <dependency>
-      <groupId>org.seleniumhq.selenium</groupId>
-      <artifactId>htmlunit-driver</artifactId>
-      <version>2.36.0</version>
-    </dependency>
   </dependencies>
   <build>
     <resources>
@@ -111,12 +106,6 @@
       <id>opera</id>
       <properties>
         <capabilities>/opera.capabilities</capabilities>
-      </properties>
-    </profile>
-    <profile>
-      <id>htmlunit</id>
-      <properties>
-        <capabilities>/htmlunit.capabilities</capabilities>
       </properties>
     </profile>
     <!-- environments -->
